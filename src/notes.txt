@@ -1,0 +1,16 @@
+// axios.get(`http://localhost/rest_api_myblog/api/post/read.php`) //I used backtick
+// //.then(json => console.log(json.data.data[0].id)) //try to traverse to your json element by doing console.log to ensure you have a feedback
+// .then(json => json.data.data.map(mydata =>(
+//     {
+//         author: `${mydata.author} ${mydata.id}`,
+//         id: mydata.registered
+//     }
+// )))
+// //.then(newData => console.log(newData)) //also I did a console.log to check if the newData is working.
+// .then(newData => this.setState({posts: newData}))
+// .catch(error => alert(error))
+
+
+deleteTodoList(id).then().catch(error => {
+                            alert(`Failed to delete todoList with id = ${id}, error=${error}`);
+});
