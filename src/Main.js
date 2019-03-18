@@ -44,7 +44,10 @@ let FlatListItem = props => {
           onPress: () => {
             alert(id);
             axios
-              .post(`http://192.168.0.12/reactcrud/api/todo/delete.php`, { id })
+              .post(
+                Expo.Constants.manifest.extra.apicall + `/api/todo/delete.php`,
+                { id }
+              )
               .then(res => {
                 // console.log(res.data);
                 alert(res.data.message);
@@ -105,7 +108,7 @@ class Main extends Component {
   }
   reloadData = () => {
     axios
-      .get(`http://192.168.0.12/reactcrud/api/todo/read.php`)
+      .get(Expo.Constants.manifest.extra.apicall + `/api/todo/read.php`)
       .then(res =>
         res.data.data.map(mydata => ({
           id: mydata.id,

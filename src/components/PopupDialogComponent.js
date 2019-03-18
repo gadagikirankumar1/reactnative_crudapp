@@ -85,7 +85,8 @@ export default class PopupDialogComponent extends Component {
                   };
                   axios
                     .post(
-                      `http://192.168.0.12/reactcrud/api/todo/create.php`,
+                      Expo.Constants.manifest.extra.apicall +
+                        `/api/todo/create.php`,
                       newTodoList
                     )
                     .then(res => {
@@ -102,7 +103,8 @@ export default class PopupDialogComponent extends Component {
                   };
                   axios
                     .post(
-                      `http://192.168.0.12/reactcrud/api/todo/update.php`,
+                      Expo.Constants.manifest.extra.apicall +
+                        `/api/todo/update.php`,
                       todoList
                     )
                     .then(res => {
